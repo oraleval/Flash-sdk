@@ -25,7 +25,7 @@
 | [lutao@unisound.com](file:///h) | 2016-11-01 | 打分系数边界值变更 |
 | [huxiaofei@unisound.com](file:///h) | 2016-11-23 | 新增第三次http评测地址修改和获取opus流 |
 | [huxiaofei@unisound.com](file:///h) | 2017-8-25 | 新增备份流程控制 |
-| [huxiaofei@unisound.com](file:///h) | 2018-1-22 | 添加中文评测 |
+| [huxiaofei@unisound.com](file:///h) | 2018-1-22 | 添加中文评测 | 版本V2.2
 
 
 
