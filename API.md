@@ -298,7 +298,7 @@
 
 >>> c、language:String(default = 'en')评测语种 可选值:[en/cn]。
 
->>> 说明：设置评测文本方法。必须在每次录音前调用以重置。language暂只支持英文/中文[en/cn]
+>>> 说明：设置评测文本方法。必须在每次录音前调用以重置。language暂只支持英文/中文[en/cn] 当language为cn时, 将先尝试JSON解析text,如果是普通字符串最终会被转化为json格式 {"Displaytext": text} 
 
 ### 5.9.开始评测start方法
 
