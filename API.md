@@ -25,7 +25,7 @@
 | [lutao@unisound.com](file:///h) | 2016-11-01 | 打分系数边界值变更 |
 | [huxiaofei@unisound.com](file:///h) | 2016-11-23 | 新增第三次http评测地址修改和获取opus流 |
 | [huxiaofei@unisound.com](file:///h) | 2017-8-25 | 新增备份流程控制 |
-| [huxiaofei@unisound.com](file:///h) | 2018-1-22 | 添加中文评测 | 版本V2.2
+| [huxiaofei@unisound.com](file:///h) | 2018-1-22 | 添加中文评测, 版本V2.2
 
 
 
@@ -296,9 +296,9 @@
 
 >>> b、serviceType:String(default = ServiceType.A)评测类型。
 
->>> c、language:String(default = 'en')评测语种 可选值:[en/cn](英文/中文)。
+>>> c、language:String(default = 'en')评测语种 可选值:[en/cn]。
 
->>> 说明：设置评测文本方法。必须在每次录音前调用以重置。
+>>> 说明：设置评测文本方法。必须在每次录音前调用以重置。language暂只支持英文/中文[en/cn]
 
 ### 5.9.开始评测start方法
 
