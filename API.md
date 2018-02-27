@@ -24,6 +24,8 @@
 | [lutao@unisound.com](file:///h) | 2016-10-12 | 新增异步评测相关属性和识别相关属性 |
 | [lutao@unisound.com](file:///h) | 2016-11-01 | 打分系数边界值变更 |
 | [huxiaofei@unisound.com](file:///h) | 2016-11-23 | 新增第三次http评测地址修改和获取opus流 |
+| [huxiaofei@unisound.com](file:///h) | 2017-8-25 | 新增备份流程控制 |
+| [huxiaofei@unisound.com](file:///h) | 2018-1-22 | 添加中文评测 |
 
 
 
@@ -213,7 +215,7 @@
 
 ### 5.2.初始化 init 方法
 
->>**public**** function**init(server:String =**&quot;eval.hivoice.cn&quot;**, port:int = 8085, backupPort:int = 80, mode:String = NetworkMode.SOCKET):**void**
+>>**public**** function**init(server:String =**&quot;eval.hivoice.cn&quot;**, port:int = 8085, cnServer:String="cn-eval.hivoice.cn", cnPort:int=18085, backupPort:int = 80, mode:String = NetworkMode.SOCKET):**void**
 
 >>参数：
 
@@ -221,9 +223,13 @@
 
 >>>b、port:int(default = 8085)端口号。
 
->>>c、backupPort:int(default = 80)端口号。
+>>>c、cnServer:String(default = "cn-eval.hivoice.cn")中文服务器地址。。
 
->>>d、mode:String(default = **&quot;socket&quot;** )服务器地址。可输入值为NetworkMode.SOCKET和NetworkMode.HTTP。
+>>>d、cnPort:int(default = 18085)端口号。
+
+>>>e、backupPort:int(default = 80)端口号。
+
+>>>f、mode:String(default = **&quot;socket&quot;** )服务器地址。可输入值为NetworkMode.SOCKET和NetworkMode.HTTP。
 
 >>说明：初始化公有云评测引擎；普通用户仅在初始化时调用init()即可，无需设置任何参数。
 
@@ -283,12 +289,14 @@
 
 ### 5.8.设置评测文本setContent方法
 
->**public**** function**setContent(text:String, serviceType:String = ServiceType.A):**void**
+>**public**** function**setContent(text:String, serviceType:String = ServiceType.A, language:String = 'en'):**void**
 
 >>参数：
 >>> a、text:String设置评测文本的内容；
 
 >>> b、serviceType:String(default = ServiceType.A)评测类型。
+
+>>> c、language:String(default = 'en')评测语种 可选值:[en/cn](英文/中文)。
 
 >>> 说明：设置评测文本方法。必须在每次录音前调用以重置。
 
@@ -331,6 +339,15 @@
 >>> port:int 端口号(default =80)
 
 >>> 说明：用户前两次评测超时后第三次评测是将优先使用,此时设置的ip地址, 如果不设置将随机获取一个评测地址；
+
+### 5.13.设置是否走备份流程setCanRetryNetwork方法
+
+>**public**** function**setCanRetryNetwork(value:Boolean):**Boolean**
+
+>>参数：
+>>>设置是否走备份流程，  默认： true
+
+>>> 说明：用户一次评测完毕，获得-7等失败的错误码后是否走备份流程继续尝试其它服务继续评测；
 
 
 ## 6.事件
